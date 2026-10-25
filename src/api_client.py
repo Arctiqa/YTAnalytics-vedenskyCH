@@ -96,6 +96,7 @@ def get_channel_videos():
                 "likes": int(stats.get("likeCount", 0)),
                 "comments": int(stats.get("commentCount", 0)),
                 "tags": tags_str,
+                "description": snippet.get("description", ""),
                 "description_length": len(snippet.get("description", "")),
                 "thumbnail_width": snippet.get("thumbnails", {}).get("maxres", {}).get("width", 0)
             })

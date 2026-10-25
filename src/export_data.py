@@ -13,7 +13,7 @@ def export_to_csv():
     df["published_at"] = pd.to_datetime(df["published_at"])
 
     os.makedirs("data", exist_ok=True)
-    output_path = "data/videos.csv"
+    output_path = os.path.join("data", "videos.csv")
     df.to_csv(output_path, index=False, encoding="utf-8-sig")
     print(f"\nСохранено в {output_path}, количество видео: {len(df)}")
 
